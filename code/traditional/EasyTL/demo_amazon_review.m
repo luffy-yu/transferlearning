@@ -1,7 +1,7 @@
 %% Test Amazon review dataset
 
-addpath('data/text/amazon_review_400/');
-str_domains = {'books','dvd','elec','kitchen'};
+% addpath('data/text/amazon_review_400/');
+% str_domains = {'books','dvd','elec','kitchen'};
 list_acc = [];
 for i = 1 : 4
     for j = 1 : 4
