@@ -28,7 +28,7 @@ function [acc,acc_list,A] = MyTJM(X_src,Y_src,X_tar,Y_tar,options)
 	gamma = options.gamma;                %% gamma is the bandwidth of rbf kernel
 	T = options.T;                        %% iteration number
     
-	fprintf('TJM: dim=%d  lambda=%f\n',dim,lambda);
+% 	fprintf('TJM: dim=%d  lambda=%f\n',dim,lambda);
 
 	% Set predefined variables
 	X = [X_src',X_tar'];
@@ -81,9 +81,9 @@ function [acc,acc_list,A] = MyTJM(X_src,Y_src,X_tar,Y_tar,options)
 	    acc = sum(Cls==Y_tar)/nt;
 	    acc_list = [acc_list;acc(1)];
 	    
-	    fprintf('[%d]  acc=%f\n',t,full(acc(1)));
+% 	    fprintf('[%d]  acc=%f\n',t,full(acc(1)));
 	end
-	fprintf('Algorithm JTM terminated!!!\n\n');
+% 	fprintf('Algorithm JTM terminated!!!\n\n');
     
 end
 
