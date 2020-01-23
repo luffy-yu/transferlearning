@@ -30,7 +30,7 @@ function [res,predicted_label] = SVM_Accuracy (trainset, M,testlabelsref,Sim,tra
     end
     [val indx]=max(model);
     CVal = C(indx);
-    model = svmtrain(trainlabels, Sim_Trn, sprintf('-t 4 -c %d -q',CVal));
-    [predicted_label, accuracy, decision_values] = svmpredict(testlabelsref, Sim, model);
+    model = libsvmtrain(trainlabels, Sim_Trn, sprintf('-t 4 -c %d -q',CVal));
+    [predicted_label, accuracy, decision_values] = libsvmpredict(testlabelsref, Sim, model);
     res = accuracy(1,1);
 end
