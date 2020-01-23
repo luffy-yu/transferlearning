@@ -41,7 +41,7 @@ function [acc,acc_ite,A] = JDA(X_src,Y_src,X_tar,Y_tar,options)
         knn_model = fitcknn(Zs',Y_src,'NumNeighbors',1);
         Y_tar_pseudo = knn_model.predict(Zt');
         acc = length(find(Y_tar_pseudo==Y_tar))/length(Y_tar); 
-        fprintf('JDA+NN=%0.4f\n',acc);
+        %fprintf('JDA+NN=%0.4f\n',acc);
         acc_ite = [acc_ite;acc];
 	end
 
