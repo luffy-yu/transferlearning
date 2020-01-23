@@ -58,14 +58,14 @@ function [res,predicted_label] = SVM_Accuracy (trainset, M,testlabelsref,Sim,tra
     CVal = C(indx);
 	
 	model = libsvmtrain(trainlabels, Sim_Trn, sprintf('-t 4 -c %d -q',CVal));
-	[predicted_label, accuracy, decision_values] = svmpredict(testlabelsref, Sim, model);
+	[predicted_label, accuracy, decision_values] = libsvmpredict(testlabelsref, Sim, model);
 	res = accuracy(1,1);
 end
 
 
 function acc = LinAccuracy(trainset,testset,trainlbl,testlbl)	           
 		model = trainSVM_Model(trainset,trainlbl);
-        [predicted_label, accuracy, decision_values] = svmpredict(testlbl, testset, model);
+        [predicted_label, accuracy, decision_values] = libsvmpredict(testlbl, testset, model);
         acc = accuracy(1,1);	
 end
 
