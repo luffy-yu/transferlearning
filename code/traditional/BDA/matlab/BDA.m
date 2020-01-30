@@ -50,6 +50,7 @@ function [acc,acc_ite,A] = BDA(X_src,Y_src,X_tar,Y_tar,options)
     kernel_type = options.kernel_type;
     gamma = options.gamma;
     T = options.T;
+    mode = options.mode;
 
     X = [X_src',X_tar'];
 	X = X*diag(sparse(1./sqrt(sum(X.^2))));
@@ -113,7 +114,7 @@ function [acc,acc_ite,A] = BDA(X_src,Y_src,X_tar,Y_tar,options)
         knn_model = fitcknn(Zs,Y_src,'NumNeighbors',1);
         Y_tar_pseudo = knn_model.predict(Zt);
         acc = length(find(Y_tar_pseudo==Y_tar))/length(Y_tar); 
-        fprintf('Iteration [%2d]:BDA+NN=%0.4f\n',i,acc);
+%         fprintf('Iteration [%2d]:BDA+NN=%0.4f\n',i,acc);
         acc_ite = [acc_ite;acc];
 	end
 
