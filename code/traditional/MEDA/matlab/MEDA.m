@@ -25,7 +25,7 @@ function [Acc,acc_iter,Beta,Yt_pred] = MEDA(Xs,Ys,Xt,Yt,options)
 %%%% Yt_pred  :  Prediction labels for target domain
 
 %% Algorithm starts here
-    fprintf('MEDA starts...\n');
+%     fprintf('MEDA starts...\n');
     
     %% Load algorithm options
     if ~isfield(options,'p')
@@ -114,10 +114,10 @@ function [Acc,acc_iter,Beta,Yt_pred] = MEDA(Xs,Ys,Xt,Yt,options)
         Acc = numel(find(Cls(n+1:end)==Yt)) / m;
         Cls = Cls(n+1:end);
         acc_iter = [acc_iter;Acc];
-        fprintf('Iteration:[%02d]>>mu=%.2f,Acc=%f\n',t,mu,Acc);
+%         fprintf('Iteration:[%02d]>>mu=%.2f,Acc=%f\n',t,mu,Acc);
     end
     Yt_pred = Cls;
-    fprintf('MEDA ends!\n');
+%     fprintf('MEDA ends!\n');
 end
 
 function K = kernel_meda(ker,X,sigma)
